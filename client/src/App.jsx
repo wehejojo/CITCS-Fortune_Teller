@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import Input from './components/Input/Input';
 import Button from './components/Button/Button';
 
@@ -50,6 +51,14 @@ function App() {
       {buttonClicked && age && <p>{`Ah, I see. You're a ${age}, you die now.`}</p>}
     </>
   );
+}
+
+// fetch logic (NOT USED YET)
+const placeholder = async () => {
+  await axios
+  .get('../public/moment.json')
+  .then((response) => {console.log(response.data)})
+  .catch((err) => {console.log(err)});
 }
 
 export default App;
